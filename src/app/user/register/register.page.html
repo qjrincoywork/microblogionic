@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button defaultHref="/"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <form (ngSubmit)="register()" autocomplete="off">
+        <ion-row>
+            <ion-col>
+                <ion-list inset>
+                    <ion-item>
+                        <ion-label position="floating">First name</ion-label>
+                        <ion-input name="first_name" id="first_nameField"
+                                    type="text" [(ngModel)]="user.first_name"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Middle name</ion-label>
+                        <ion-input name="middle_name" id="middle_nameField"
+                                    type="text" [(ngModel)]="user.middle_name"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Last name</ion-label>
+                        <ion-input name="last_name" id="last_nameField"
+                                    type="text" [(ngModel)]="user.last_name"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Suffix</ion-label>
+                        <ion-input name="suffix" id="suffixField"
+                                    type="text" [(ngModel)]="user.suffix"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Username</ion-label>
+                        <ion-input name="username" id="usernameField"
+                                    type="text" [(ngModel)]="user.username"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Gender</ion-label>
+                        <ion-select name="gender" [(ngModel)]="user.gender">
+                          <ion-select-option value="0">Female</ion-select-option>
+                          <ion-select-option value="1">Male</ion-select-option>
+                        </ion-select>
+                      </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Email</ion-label>
+                        <ion-input name="email" id="emailField"
+                                    type="text" [(ngModel)]="user.email"></ion-input>
+                    </ion-item>
+                    <!-- <div *ngIf="!user.email.valid">{{user.email.errors| json}}</div> -->
+                    <ion-item>
+                        <ion-label position="floating">Password</ion-label>
+                        <ion-input name="password" id="passwordField"
+                                    type="password" [(ngModel)]="user.password"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                        <ion-label position="floating">Confirm Password</ion-label>
+                        <ion-input name="confirm_password" id="confirm_passwordField"
+                                    type="password" [(ngModel)]="user.confirm_password"></ion-input>
+                    </ion-item>
+                </ion-list>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col class="ion-align-items-center">
+                <!-- <div *ngIf="error" class="alert alert-danger">{{error}}</div> -->
+                <ion-button expand="block" class="register_user" type="submit">Sign up
+                </ion-button>
+            </ion-col>
+        </ion-row>
+    </form>
+</ion-content>
+<ion-list>
+    <ion-item>
+        <!-- <div *ngIf="!errors['first_name']">{{ errors['first_name'] }}</div> -->
+        <!-- <ion-label [errors]="errors.first_name"></ion-label> -->
+    </ion-item>
+</ion-list>

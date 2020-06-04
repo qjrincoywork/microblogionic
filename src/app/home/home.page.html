@@ -1,0 +1,48 @@
+<ion-content [fullscreen]="true">
+    <ion-header [translucent]="true">
+        <ion-toolbar color="secondary">
+          <ion-title>
+            Microblog
+          </ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <div class='ion-text-center ion-margin-vertical'>
+        <img src="assets/img/microbloglogo.png"/>
+      </div>
+      <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+          <ion-grid>
+            <ion-row>
+              <ion-col size-md="6" offset-md="3">
+                  <!-- <ion-card>
+                      <ion-card-content> -->
+                          <ion-item>
+                              <ion-label position="floating">Username</ion-label>
+                              <ion-input name="username" id="usernameField"
+                                          type="text" [(ngModel)]="username"></ion-input>
+                          </ion-item>
+                          <ion-item>
+                              <ion-label position="floating">Password</ion-label>
+                              <ion-input name="password" id="passwordField"
+                                          type="password" [(ngModel)]="password"></ion-input>
+                          </ion-item>
+                      <!-- </ion-card-content>
+                  </ion-card> -->
+                  <div class='auth-buttons'>
+                      <ion-row>
+                          <ion-col size-md="3" offset-md="3" size-sm="3" offset-sm="3" size-xs="12" class="ion-margin-top">
+                              <!-- <div *ngIf="error" class="alert alert-danger">{{error}}</div> -->
+                              <ion-button type="submit">Log in</ion-button>
+                          </ion-col>
+                          <ion-col size-md="4" offset-md="2" size-sm="3" size-xs="12" offset-sm="2" class="ion-margin-top">
+                              <ion-router-link href="/register">Sign up</ion-router-link>
+                              <!-- <a slot="end" target="_blank" rel="noopener noreferrer" href="/register">Sign up</a> -->
+                          </ion-col>
+                      </ion-row>
+                      <!-- <ion-row> -->
+                      <!-- </ion-row> -->
+                  </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </form>
+  </ion-content>
